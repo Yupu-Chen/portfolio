@@ -91,10 +91,10 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden w-full">
       <canvas ref={canvasRef} className="absolute inset-0 bg-[#FFCC00] z-0" />
 
-      <div className="container relative z-10 px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

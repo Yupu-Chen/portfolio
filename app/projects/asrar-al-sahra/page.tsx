@@ -25,10 +25,10 @@ export default function AsrarAlSahraPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white w-full">
       {/* Header */}
-      <div className="bg-[#FFCC00] py-6">
-        <div className="container px-4 md:px-6">
+      <div className="bg-[#FFCC00] py-6 w-full">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <button
             onClick={handleBackToProjects}
             className="inline-flex items-center text-black font-medium hover:underline mb-6 bg-transparent border-0 cursor-pointer"
@@ -51,7 +51,7 @@ export default function AsrarAlSahraPage() {
       </div>
 
       {/* Project Content */}
-      <div className="container px-4 md:px-6 py-12">
+      <div className="container mx-auto px-4 md:px-6 py-12 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">

@@ -10,6 +10,7 @@ import { ProjectsSection } from "@/components/projects-section"
 import { SkillsSection } from "@/components/skills-section"
 import { ContactSection } from "@/components/contact-section"
 import { CustomCursor } from "@/components/custom-cursor"
+import { Navigation } from "@/components/navigation"
 
 export default function Home() {
   // Check if we need to scroll to projects section
@@ -31,8 +32,9 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative">
+    <main className="relative w-full">
       <CustomCursor />
+      <Navigation />
       <HeroSection />
       <AboutMeSection />
       <ArtistStatementSection />

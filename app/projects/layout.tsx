@@ -7,9 +7,9 @@ export default function ProjectLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
+    <div className="w-full">
       <CustomCursor />
       {children}
-    </>
+    </div>
   )
 }

@@ -33,7 +33,7 @@ export function Navigation() {
           isScrolled ? "bg-white/90 backdrop-blur-sm shadow-md py-2" : "bg-transparent py-4"
         }`}
       >
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="flex items-center justify-between">
             <Link href="#hero" className="text-black font-bold text-xl md:text-2xl">
               YUPU CHEN
@@ -74,7 +74,7 @@ export function Navigation() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-white pt-20"
           >
-            <nav className="container mx-auto px-4 py-8 flex flex-col space-y-6">
+            <nav className="container mx-auto px-4 py-8 flex flex-col space-y-6 max-w-7xl">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
