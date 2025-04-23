@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export function ArtistStatementSection() {
   return (
     <section id="artist-statement" className="py-20 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

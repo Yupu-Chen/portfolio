@@ -2,66 +2,42 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ExternalLink } from "lucide-react"
 
-// Sample research data - replace with your actual research
-const researchAreas = [
-  {
-    id: "hci",
-    title: "Human-Computer Interaction",
-    description: "Exploring new ways humans can interact with technology through intuitive interfaces and experiences.",
-    projects: [
-      {
-        title: "Gesture-Based Interaction Systems",
-        description:
-          "Research on natural gesture recognition for controlling digital environments without physical controllers.",
-      },
-      {
-        title: "Affective Computing Interfaces",
-        description:
-          "Developing systems that can recognize and respond to human emotions through facial expressions and biometric data.",
-      },
-    ],
-  },
-  {
-    id: "xr",
-    title: "Extended Reality",
-    description:
-      "Investigating the potential of virtual, augmented, and mixed reality technologies for creative and practical applications.",
-    projects: [
-      {
-        title: "Spatial Computing in Education",
-        description:
-          "Using AR/VR to create immersive learning environments that enhance knowledge retention and engagement.",
-      },
-      {
-        title: "XR for Cultural Preservation",
-        description:
-          "Documenting and recreating cultural heritage sites and practices through extended reality experiences.",
-      },
-    ],
-  },
-  {
-    id: "robotics",
-    title: "Robotics & Art",
-    description: "Combining robotics with artistic expression to create interactive installations and performances.",
-    projects: [
-      {
-        title: "Autonomous Robotic Performers",
-        description: "Creating robots that can participate in artistic performances with human collaborators.",
-      },
-      {
-        title: "Kinetic Sculptures",
-        description: "Developing motion-responsive sculptural works that interact with viewers and environments.",
-      },
-    ],
-  },
-]
+// Updated research data with only VR research
+const researchData = {
+  title: "Virtual Reality Research",
+  description:
+    "Exploring the potential of virtual reality for enhancing human experiences, decision-making, and well-being.",
+  projects: [
+    {
+      title: "Embodiment in Virtual Reality and Decision Making",
+      description:
+        "This research project explores decision-making within VR environments. The study incorporates response-based games into VR scenarios to examine how embodiment influences decision-making and behavior. This is an ongoing research project.",
+      status: "Ongoing",
+    },
+    {
+      title: "Virtual Reality Meditation",
+      description:
+        "The VR meditation research explores how immersive virtual environments can enhance mindfulness and self-awareness in an increasingly distracted world. By integrating meditative practices with interactive digital spaces, the project examines how VR can create a sense of presence, guide focus, and facilitate deep relaxation.",
+      status: "Published",
+    },
+  ],
+  publications: [
+    {
+      title: "Enhancing Meditation Through Virtual Reality: The Effect Of VR On Mindfulness And Well-Being",
+      authors: "Chen, Y., Zhao, Y., Singh, R., Sabbani, Y.",
+      venue: "15th Annual Undergraduate Research Conference On Applied Computing 2024. Zayed University.",
+      year: "2024",
+      link: "https://www.zu.ac.ae/main/en/urc2024/URCBookOfAbstracts2024.pdf",
+    },
+  ],
+}
 
 export function ResearchSection() {
   return (
     <section id="research" className="py-20 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,54 +51,73 @@ export function ResearchSection() {
           </p>
         </motion.div>
 
-        <Tabs defaultValue="hci" className="w-full">
-          <TabsList className="grid grid-cols-1 md:grid-cols-3 mb-8">
-            {researchAreas.map((area) => (
-              <TabsTrigger
-                key={area.id}
-                value={area.id}
-                className="data-[state=active]:bg-[#FFCC00] data-[state=active]:text-black"
-              >
-                {area.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid gap-6"
+        >
+          <Card>
+            <CardHeader>
+              <CardTitle>{researchData.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-6">{researchData.description}</p>
 
-          {researchAreas.map((area) => (
-            <TabsContent key={area.id} value={area.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="grid gap-6"
-              >
-                <Card>
-                  <CardHeader>
-                    <CardTitle>{area.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-6">{area.description}</p>
-
-                    <div className="grid gap-4">
-                      {area.projects.map((project, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: index * 0.1 }}
-                          className="p-4 border rounded-lg"
-                        >
-                          <h4 className="font-semibold mb-2">{project.title}</h4>
-                          <p className="text-gray-600">{project.description}</p>
-                        </motion.div>
-                      ))}
+              <h3 className="text-xl font-bold mb-4">Research Projects</h3>
+              <div className="grid gap-4">
+                {researchData.projects.map((project, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="p-4 border rounded-lg"
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="font-semibold">{project.title}</h4>
+                      {project.status && (
+                        <span className="text-xs bg-[#FFCC00] text-black px-2 py-1 rounded-full">{project.status}</span>
+                      )}
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </TabsContent>
-          ))}
-        </Tabs>
+                    <p className="text-gray-600">{project.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <h3 className="text-xl font-bold mb-4">Publications</h3>
+                <div className="grid gap-4">
+                  {researchData.publications.map((publication, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="p-4 border rounded-lg bg-gray-50"
+                    >
+                      <h4 className="font-semibold mb-2">{publication.title}</h4>
+                      <p className="text-gray-600 mb-1">{publication.authors}</p>
+                      <p className="text-gray-600 mb-1">
+                        {publication.venue} ({publication.year})
+                      </p>
+                      {publication.link && (
+                        <a
+                          href={publication.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-blue-600 hover:text-blue-800 mt-2 text-sm"
+                        >
+                          View Publication <ExternalLink className="ml-1 h-3 w-3" />
+                        </a>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
   )

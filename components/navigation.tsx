@@ -20,9 +20,10 @@ export function Navigation() {
 
   const navItems = [
     { name: "HOME", href: "#hero" },
-    { name: "ARTIST STATEMENT", href: "#about" },
+    { name: "ARTIST STATEMENT", href: "#artist-statement" },
     { name: "RECENT PROJECTS", href: "#projects" },
     { name: "RESEARCH", href: "#research" },
+    { name: "SKILLS", href: "#skills" },
     { name: "CURRICULUM VITAE", href: "#contact" },
   ]
 

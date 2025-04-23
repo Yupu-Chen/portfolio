@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Updated project data with inTerScape as the first project and Asrar Al-Sahra as the second
+// Updated project data with all four projects
 const projects = [
   {
     id: 1,
@@ -34,19 +34,25 @@ const projects = [
   },
   {
     id: 3,
-    title: "Project Three",
-    description: "Extended Reality experience creating immersive storytelling environments.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["XR", "VR", "Storytelling"],
-    detailUrl: "#",
+    title: "GalleryEverywhere",
+    description:
+      "An experimental iOS AR application that allows users to curate their own exhibitions in any space they choose, challenging traditional knowledge structures in art museums.",
+    collaborators: "Yupu Chen and Samuel Fung",
+    status: "Completed",
+    image: "/images/gallery-everywhere-logo.png",
+    tags: ["Augmented Reality", "iOS", "Art Curation"],
+    detailUrl: "/projects/gallery-everywhere",
   },
   {
     id: 4,
-    title: "Project Four",
-    description: "Business-focused application merging technology with practical market solutions.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Business", "Technology", "UX"],
-    detailUrl: "#",
+    title: "Joy, Inside Out Robot Performance",
+    description:
+      "A robotic performance bringing emotions to life through interactive characters, each embodying a distinct feeling—Joy, Anger, Sadness, Disgust, and Fear—exploring the complexities of human emotions.",
+    collaborators: "Yupu Chen and Yoki Xue",
+    status: "Completed",
+    image: "/images/joy-robot.jpeg",
+    tags: ["Robotics", "Interactive Performance", "Emotional Intelligence"],
+    detailUrl: "/projects/inside-out-robots",
   },
 ]
 

@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/hero-section"
 import { AboutMeSection } from "@/components/about-me-section"
 import { ArtistStatementSection } from "@/components/artist-statement-section"
 import { ProjectsSection } from "@/components/projects-section"
+import { ResearchSection } from "@/components/research-section"
 import { SkillsSection } from "@/components/skills-section"
 import { ContactSection } from "@/components/contact-section"
 import { CustomCursor } from "@/components/custom-cursor"
@@ -39,6 +40,7 @@ export default function Home() {
       <AboutMeSection />
       <ArtistStatementSection />
       <ProjectsSection />
+      <ResearchSection />
       <SkillsSection />
       <ContactSection />
 

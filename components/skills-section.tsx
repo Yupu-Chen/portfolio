@@ -111,9 +111,9 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">RESEARCH</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            My research and expertise in various fields of technology, art, and human-computer interaction.
+            My expertise in various fields of technology, art, and human-computer interaction.
           </p>
         </motion.div>
 
