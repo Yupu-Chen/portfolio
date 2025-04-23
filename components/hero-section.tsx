@@ -129,7 +129,7 @@ export function HeroSection() {
               <a href="#projects">View My Work</a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black/10">
-              <a href="#about">Artist Statement</a>
+              <a href="#artist-statement">Artist Statement</a>
             </Button>
           </motion.div>
         </motion.div>
