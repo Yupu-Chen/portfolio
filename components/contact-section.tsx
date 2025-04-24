@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Mail, MapPin, FileText } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
+import { CVPreviewSection } from "@/components/cv-preview-section"
 
 export function ContactSection() {
   return (
@@ -35,8 +36,8 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg">Email</h4>
-                  <a href="mailto:yc4031@nyu.edu" className="text-gray-600 hover:text-black transition-colors">
-                    yc4889@nyu.edu
+                  <a href="mailto:yp.chen@nyu.edu" className="text-gray-600 hover:text-black transition-colors">
+                    yp.chen@nyu.edu
                   </a>
                 </div>
               </div>
@@ -57,8 +58,13 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-medium text-lg">Curriculum Vitae</h4>
-                  <a href="/cv.pdf" download className="text-gray-600 hover:text-black transition-colors">
+                  <a
+                    href="/yupu-chen-cv.pdf"
+                    download
+                    className="text-gray-600 hover:text-black transition-colors flex items-center"
+                  >
                     Download Full CV
+                    <span className="ml-2 text-xs bg-[#FFCC00] text-black px-2 py-1 rounded-full">PDF</span>
                   </a>
                 </div>
               </div>
@@ -101,6 +107,8 @@ export function ContactSection() {
                 </a>
               </div>
             </div>
+
+            <CVPreviewSection />
           </motion.div>
 
           <motion.div
