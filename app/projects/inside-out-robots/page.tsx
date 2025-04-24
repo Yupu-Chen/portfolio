@@ -2,11 +2,10 @@
 
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { ContactDialog } from "@/components/contact-dialog"
 
 export default function InsideOutRobotsProject() {
   const router = useRouter()
@@ -200,9 +199,7 @@ export default function InsideOutRobotsProject() {
                 If you'd like to learn more about the Inside Out Robot Performance or discuss potential collaborations,
                 feel free to get in touch.
               </p>
-              <Button asChild className="w-full bg-black text-white hover:bg-black/80">
-                <Link href="/#contact">Contact Me</Link>
-              </Button>
+              <ContactDialog buttonText="Contact Me" buttonClassName="bg-black text-white hover:bg-black/80" />
             </div>
           </div>
         </div>

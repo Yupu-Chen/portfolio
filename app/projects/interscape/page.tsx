@@ -2,11 +2,10 @@
 
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { ContactDialog } from "@/components/contact-dialog"
 
 export default function InterscapePage() {
   const router = useRouter()
@@ -56,12 +55,15 @@ export default function InterscapePage() {
           <div className="lg:col-span-2 space-y-8">
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=600&width=1200"
-                alt="inTerScape Project"
+                src="/images/interscape-exhibition.jpeg"
+                alt="inTerScape Project Exhibition"
                 width={1200}
                 height={600}
                 className="w-full h-auto"
               />
+              <p className="text-sm text-gray-500 italic p-2">
+                Visitors experiencing the inTerScape installation at the exhibition
+              </p>
             </div>
 
             <div className="prose prose-lg max-w-none">
@@ -163,9 +165,7 @@ export default function InterscapePage() {
                 If you'd like to learn more about inTerScape or discuss potential collaborations, feel free to get in
                 touch.
               </p>
-              <Button asChild className="w-full bg-black text-white hover:bg-black/80">
-                <Link href="/#contact">Contact Me</Link>
-              </Button>
+              <ContactDialog buttonText="Contact Me" buttonClassName="bg-black text-white hover:bg-black/80" />
             </div>
           </div>
         </div>

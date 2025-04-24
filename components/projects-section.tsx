@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Updated project data with all four projects
+// Updated project data with inTerScape as the first project and Asrar Al-Sahra as the second
 const projects = [
   {
     id: 1,
@@ -17,7 +17,7 @@ const projects = [
       "An interactive, multimedia experience examining our evolving relationship with the Internet and technology through a reflective journey — from growing up online to its lasting impact.",
     collaborators: "Yupu Chen, Bato Batbileg, and Ronit Singh",
     status: "Ongoing",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/interscape-exhibition.jpeg",
     tags: ["Interactive Installation", "Audiovisual Art", "Augmented Reality"],
     detailUrl: "/projects/interscape",
   },

@@ -1,7 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -23,7 +22,11 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>
 
-export function ContactForm() {
+interface ContactFormProps {
+  onSuccess?: () => void
+}
+
+export function ContactForm({ onSuccess }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Initialize form
@@ -36,6 +39,11 @@ export function ContactForm() {
       message: "",
     },
   })
+
+  // Reset form when component mounts
+  useEffect(() => {
+    form.reset()
+  }, [form])
 
   // Handle form submission
   const onSubmit = async (data: FormData) => {
@@ -50,6 +58,9 @@ export function ContactForm() {
           description: result.message,
         })
         form.reset()
+        if (onSuccess) {
+          onSuccess()
+        }
       } else {
         toast({
           title: "Error",
@@ -69,13 +80,7 @@ export function ContactForm() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className="w-full max-w-md mx-auto"
-    >
+    <div className="w-full max-w-md mx-auto">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -149,6 +154,6 @@ export function ContactForm() {
           </Button>
         </form>
       </Form>
-    </motion.div>
+    </div>
   )
 }
