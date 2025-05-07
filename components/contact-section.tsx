@@ -60,10 +60,11 @@ export function ContactSection() {
                   <h4 className="font-medium text-lg">Curriculum Vitae</h4>
                   <a
                     href="/yupu-chen-cv.pdf"
-                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors flex items-center"
                   >
-                    Download Full CV
+                    View Full CV
                     <span className="ml-2 text-xs bg-[#FFCC00] text-black px-2 py-1 rounded-full">PDF</span>
                   </a>
                 </div>

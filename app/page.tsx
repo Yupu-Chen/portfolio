@@ -14,7 +14,7 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
 
 export default function Home() {
-  // Check if we need to scroll to projects section
+  // Update the useEffect to handle scrolling to projects section
   useEffect(() => {
     const shouldScrollToProjects = sessionStorage.getItem("scrollToProjects") === "true"
 
@@ -29,6 +29,9 @@ export default function Home() {
           projectsSection.scrollIntoView({ behavior: "smooth" })
         }
       }, 100)
+    } else {
+      // If not scrolling to projects, scroll to top
+      window.scrollTo(0, 0)
     }
   }, [])
 

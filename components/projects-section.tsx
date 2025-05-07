@@ -151,9 +151,9 @@ export function ProjectsSection() {
           className="text-center mt-12"
         >
           <Button asChild className="bg-[#FFCC00] text-black hover:bg-[#E6B800]" size="lg">
-            <a href="#" className="font-medium">
+            <Link href="/projects" className="font-medium">
               SEE COMPLETE LIST OF PROJECTS
-            </a>
+            </Link>
           </Button>
         </motion.div>
       </div>

@@ -1,5 +1,5 @@
 "use client"
-import { Download } from "lucide-react"
+import { Download, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function CVPreviewSection() {
@@ -15,15 +15,16 @@ export function CVPreviewSection() {
         </div>
 
         <div>
+          <h4 className="font-medium text-gray-800">Certifications</h4>
+          <p className="text-gray-600">Associate Unity Game Developer – Unity Technologies, 2023</p>
+          <p className="text-gray-600">Social-Behavioral-Educational Researchers – CITI Program, 2024</p>
+        </div>
+
+        <div>
           <h4 className="font-medium text-gray-800">Professional Experience</h4>
           <p className="text-gray-600">Undergraduate Research Assistant, NYU Abu Dhabi (2024-Present)</p>
           <p className="text-gray-600">Marketing & Communications Intern, DELUXETARGETS (2022-2024)</p>
           <p className="text-gray-600">Community Building Summer Intern, WeScaleVenture (2023)</p>
-        </div>
-
-        <div>
-          <h4 className="font-medium text-gray-800">Skills</h4>
-          <p className="text-gray-600">Unity, Python, C++, C#, Swift, Web Development, Adobe CC</p>
         </div>
 
         <div>
@@ -32,11 +33,22 @@ export function CVPreviewSection() {
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 space-y-3">
         <Button asChild className="w-full bg-[#FFCC00] text-black hover:bg-[#E6B800] flex items-center justify-center">
-          <a href="/yupu-chen-cv.pdf" download>
+          <a href="/yupu-chen-cv.pdf" target="_blank" rel="noopener noreferrer">
             <Download className="mr-2 h-4 w-4" />
-            Download Complete CV
+            View Complete CV (PDF)
+          </a>
+        </Button>
+
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-[#FFCC00] text-black hover:bg-[#FFCC00]/10 flex items-center justify-center"
+        >
+          <a href="/cv">
+            <FileText className="mr-2 h-4 w-4" />
+            View Full CV Online
           </a>
         </Button>
       </div>
