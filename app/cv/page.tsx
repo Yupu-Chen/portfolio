@@ -226,6 +226,37 @@ export default function CVPage() {
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between items-start flex-wrap">
+                    <h3 className="text-xl font-semibold">Parametric Design</h3>
+                    <p className="text-gray-600">2023</p>
+                  </div>
+                  <p className="text-gray-700 italic">Project Co-Creator</p>
+                  <ul className="list-disc list-inside mt-2 text-gray-600">
+                    <li>
+                      Developed a web platform exploring the intersection of mathematics and design through a collection
+                      of parametric models.
+                    </li>
+                    <li>
+                      Created interactive visualizations that demonstrate how algorithmic thinking can produce
+                      beautiful, functional designs.
+                    </li>
+                    <li>
+                      Implemented responsive design principles to ensure the platform works across different devices.
+                    </li>
+                    <li>
+                      <a
+                        href="https://v0-parametric-design.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        View Project
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-start flex-wrap">
                     <h3 className="text-xl font-semibold">Catier: Through The Lens Business Challenge</h3>
                     <p className="text-gray-600">Abu Dhabi, UAE</p>
                   </div>

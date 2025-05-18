@@ -3,8 +3,9 @@
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { ContactDialog } from "@/components/contact-dialog"
 
 export default function InterscapePage() {
@@ -40,7 +41,7 @@ export default function InterscapePage() {
             <Badge className="bg-black text-white hover:bg-black/80">Interactive Installation</Badge>
             <Badge className="bg-black text-white hover:bg-black/80">Audiovisual Art</Badge>
             <Badge className="bg-black text-white hover:bg-black/80">Augmented Reality</Badge>
-            <Badge className="bg-white text-black border border-black">Ongoing</Badge>
+            <Badge className="bg-white text-black border border-black">Completed</Badge>
           </div>
           <p className="text-black mt-4 text-lg">
             <span className="font-medium">Collaborators:</span> Yupu Chen, Bato Batbileg, and Ronit Singh
@@ -66,6 +67,20 @@ export default function InterscapePage() {
               </p>
             </div>
 
+            <div className="mt-8">
+              <Button asChild className="bg-[#FFCC00] text-black hover:bg-[#E6B800]">
+                <a
+                  href="https://interscape.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Visit Live Experience
+                </a>
+              </Button>
+            </div>
+
             <div className="prose prose-lg max-w-none">
               <p>
                 inTerScape is an interactive, multimedia experience that consists of three parts, including physical
@@ -89,10 +104,6 @@ export default function InterscapePage() {
                 Interscape fosters dialogue on the ways digital culture influences human agency and perception,
                 ultimately challenging us to rethink our coexistence with technology.
               </p>
-
-              <div className="bg-gray-100 p-4 rounded-lg mt-8">
-                <p className="italic">This is an ongoing project. It will be finished and exhibited in April, 2025.</p>
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -128,7 +139,7 @@ export default function InterscapePage() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700">Exhibition Date</h4>
-                  <p>April 2025</p>
+                  <p>Spring 2025</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700">Medium</h4>
@@ -136,7 +147,18 @@ export default function InterscapePage() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700">Status</h4>
-                  <p>In Progress</p>
+                  <p>Completed</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Live URL</h4>
+                  <a
+                    href="https://interscape.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    interscape.vercel.app
+                  </a>
                 </div>
               </div>
             </div>

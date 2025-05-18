@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Updated project data with inTerScape as the first project and Asrar Al-Sahra as the second
+// Updated project data with Parametric Design project
 const projects = [
   {
     id: 1,
@@ -16,13 +16,26 @@ const projects = [
     description:
       "An interactive, multimedia experience examining our evolving relationship with the Internet and technology through a reflective journey — from growing up online to its lasting impact.",
     collaborators: "Yupu Chen, Bato Batbileg, and Ronit Singh",
-    status: "Ongoing",
+    status: "Completed",
     image: "/images/interscape-exhibition.jpeg",
     tags: ["Interactive Installation", "Audiovisual Art", "Augmented Reality"],
     detailUrl: "/projects/interscape",
+    externalUrl: "https://interscape.vercel.app/",
   },
   {
     id: 2,
+    title: "Parametric Design",
+    description:
+      "A web platform exploring the intersection of mathematics and design through a collection of parametric models, showcasing how algorithmic thinking can create beautiful, functional designs.",
+    collaborators: "Yupu Chen & Mbebo Nonna",
+    status: "Completed",
+    image: "/images/parametric-design-table.png",
+    tags: ["Web Development", "Parametric Design", "Mathematics"],
+    detailUrl: "/projects/parametric-design",
+    externalUrl: "https://v0-parametric-design.vercel.app/",
+  },
+  {
+    id: 3,
     title: "أسرار الصحراء (Asrar Al-Sahra)",
     description:
       "A mysterious lamp that whispers forgotten tales, inviting seekers on a journey to uncover the secrets of the desert through interactive storytelling.",
@@ -33,7 +46,7 @@ const projects = [
     detailUrl: "/projects/asrar-al-sahra",
   },
   {
-    id: 3,
+    id: 4,
     title: "GalleryEverywhere",
     description:
       "An experimental iOS AR application that allows users to curate their own exhibitions in any space they choose, challenging traditional knowledge structures in art museums.",
@@ -42,17 +55,6 @@ const projects = [
     image: "/images/gallery-everywhere-logo.png",
     tags: ["Augmented Reality", "iOS", "Art Curation"],
     detailUrl: "/projects/gallery-everywhere",
-  },
-  {
-    id: 4,
-    title: "Joy, Inside Out Robot Performance",
-    description:
-      "A robotic performance bringing emotions to life through interactive characters, each embodying a distinct feeling—Joy, Anger, Sadness, Disgust, and Fear—exploring the complexities of human emotions.",
-    collaborators: "Yupu Chen and Yoki Xue",
-    status: "Completed",
-    image: "/images/joy-robot.jpeg",
-    tags: ["Robotics", "Interactive Performance", "Emotional Intelligence"],
-    detailUrl: "/projects/inside-out-robots",
   },
 ]
 
@@ -111,6 +113,18 @@ export function ProjectsSection() {
                           <ExternalLink className="h-4 w-4 mr-2" /> View Project
                         </Link>
                       </Button>
+                      {project.externalUrl && (
+                        <Button
+                          asChild
+                          size="sm"
+                          variant="outline"
+                          className="rounded-full bg-white text-black hover:bg-gray-100 border-white"
+                        >
+                          <a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" /> Live Site
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>

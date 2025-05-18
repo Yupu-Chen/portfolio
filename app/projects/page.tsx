@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { CustomCursor } from "@/components/custom-cursor"
 
-// Complete project data with all projects
+// Complete project data with all projects including Parametric Design
 const allProjects = [
   {
     id: 1,
@@ -18,13 +18,26 @@ const allProjects = [
     description:
       "An interactive, multimedia experience examining our evolving relationship with the Internet and technology through a reflective journey — from growing up online to its lasting impact.",
     collaborators: "Yupu Chen, Bato Batbileg, and Ronit Singh",
-    status: "Ongoing",
+    status: "Completed",
     image: "/images/interscape-exhibition.jpeg",
     tags: ["Interactive Installation", "Audiovisual Art", "Augmented Reality"],
     detailUrl: "/projects/interscape",
+    externalUrl: "https://interscape.vercel.app/",
   },
   {
     id: 2,
+    title: "Parametric Design",
+    description:
+      "A web platform exploring the intersection of mathematics and design through a collection of parametric models, showcasing how algorithmic thinking can create beautiful, functional designs.",
+    collaborators: "Yupu Chen & Mbebo Nonna",
+    status: "Completed",
+    image: "/images/parametric-design-table.png",
+    tags: ["Web Development", "Parametric Design", "Mathematics"],
+    detailUrl: "/projects/parametric-design",
+    externalUrl: "https://v0-parametric-design.vercel.app/",
+  },
+  {
+    id: 3,
     title: "أسرار الصحراء (Asrar Al-Sahra)",
     description:
       "A mysterious lamp that whispers forgotten tales, inviting seekers on a journey to uncover the secrets of the desert through interactive storytelling.",
@@ -35,7 +48,7 @@ const allProjects = [
     detailUrl: "/projects/asrar-al-sahra",
   },
   {
-    id: 3,
+    id: 4,
     title: "GalleryEverywhere",
     description:
       "An experimental iOS AR application that allows users to curate their own exhibitions in any space they choose, challenging traditional knowledge structures in art museums.",
@@ -46,7 +59,7 @@ const allProjects = [
     detailUrl: "/projects/gallery-everywhere",
   },
   {
-    id: 4,
+    id: 5,
     title: "Joy, Inside Out Robot Performance",
     description:
       "A robotic performance bringing emotions to life through interactive characters, each embodying a distinct feeling—Joy, Anger, Sadness, Disgust, and Fear—exploring the complexities of human emotions.",
@@ -57,36 +70,25 @@ const allProjects = [
     detailUrl: "/projects/inside-out-robots",
   },
   {
-    id: 5,
+    id: 6,
     title: "VR Meditation Experience",
     description:
       "A virtual reality meditation experience designed to enhance mindfulness and well-being through immersive environments and guided practices.",
     collaborators: "Yupu Chen, Yoki Zhao, Ronit Singh, Yaakulya Sabbani",
     status: "Completed",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/interscape-exhibition.jpeg",
     tags: ["Virtual Reality", "Meditation", "Well-being"],
     detailUrl: "#",
   },
   {
-    id: 6,
-    title: "Cartier: Through The Lens",
+    id: 7,
+    title: "Catier: Through The Lens",
     description:
       "A business challenge project exploring how Cartier can increase its influence among Gen-Z consumers by entering the realm of arts.",
     collaborators: "Yupu Chen (Team Leader)",
     status: "Completed",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/desert-lamp-exhibition-1.png",
     tags: ["Business Strategy", "Luxury Market", "Gen-Z Consumers"],
-    detailUrl: "#",
-  },
-  {
-    id: 7,
-    title: "China Gulf Forum 2022",
-    description:
-      "A forum bringing together stakeholders from China and Gulf countries to discuss cooperation and development opportunities.",
-    collaborators: "Yupu Chen (Operations Team)",
-    status: "Completed",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Event Management", "International Relations", "Operations"],
     detailUrl: "#",
   },
   {
@@ -96,7 +98,7 @@ const allProjects = [
       "A research project exploring how embodiment in virtual reality environments influences decision-making and behavior.",
     collaborators: "Yupu Chen, Research Team at NYU Abu Dhabi",
     status: "Ongoing",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/images/desert-lamp-exhibition-2.png",
     tags: ["Virtual Reality", "Research", "Decision Making"],
     detailUrl: "#",
   },
@@ -108,6 +110,7 @@ const categories = [
   { id: "installation", name: "Installations" },
   { id: "ar-vr", name: "AR/VR" },
   { id: "robotics", name: "Robotics" },
+  { id: "web", name: "Web Development" },
   { id: "research", name: "Research" },
 ]
 
@@ -122,6 +125,7 @@ export default function ProjectsPage() {
     if (activeCategory === "ar-vr")
       return project.tags.some((tag) => tag.includes("Reality") || tag.includes("AR") || tag.includes("VR"))
     if (activeCategory === "robotics") return project.tags.some((tag) => tag.includes("Robot"))
+    if (activeCategory === "web") return project.tags.some((tag) => tag.includes("Web"))
     if (activeCategory === "research") return project.tags.some((tag) => tag.includes("Research"))
     return true
   })
@@ -217,6 +221,18 @@ export default function ProjectsPage() {
                             <ExternalLink className="h-4 w-4 mr-2" /> View Project
                           </Link>
                         </Button>
+                        {project.externalUrl && (
+                          <Button
+                            asChild
+                            size="sm"
+                            variant="outline"
+                            className="rounded-full bg-white text-black hover:bg-gray-100 border-white"
+                          >
+                            <a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4 mr-2" /> Live Site
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>
